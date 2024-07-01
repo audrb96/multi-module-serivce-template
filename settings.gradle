@@ -1,1 +1,6 @@
 rootProject.name = 'service-template'
+
+include 'application'
+include 'application:api'
+include 'application:api:user-api'
+
