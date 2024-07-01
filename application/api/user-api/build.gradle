@@ -1,4 +1,14 @@
+bootJar {
+    enabled = true
+}
+
+jar {
+    enabled = false
+}
+
 dependencies {
     implementation project(':core:core-domain:user-domain')
+    implementation project(':core:core-db:user-mysql-jpa-db')
+
     implementation 'org.springframework.boot:spring-boot-starter-web'
 }

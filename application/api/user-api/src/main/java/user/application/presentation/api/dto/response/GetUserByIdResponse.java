@@ -16,4 +16,12 @@ public class GetUserByIdResponse {
 	public static GetUserByIdResponse from(User user) {
 		return new GetUserByIdResponse(user.getName().name(), user.getPassword().password());
 	}
+
+	public String getName() {
+		return name;
+	}
+
+	public String getPassword() {
+		return password;
+	}
 }
