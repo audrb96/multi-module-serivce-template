@@ -1,3 +1,4 @@
 dependencies {
+    implementation project(':core:core-domain:user-domain')
     implementation 'org.springframework.boot:spring-boot-starter-web'
 }
