@@ -10,5 +10,7 @@ dependencies {
     implementation project(':core:core-domain:user-domain')
     implementation project(':core:core-db:user-mysql-jpa-db')
 
+    implementation project(':support:yaml-importer')
+
     implementation 'org.springframework.boot:spring-boot-starter-web'
 }
