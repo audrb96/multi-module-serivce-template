@@ -1,5 +1,7 @@
 package user.application.presentation.api.dto.request;
 
+import user.application.service.command.CreateUserCommand;
+
 public class CreateUserRequest {
 
 	private final String name;
@@ -17,5 +19,9 @@ public class CreateUserRequest {
 
 	public String getPassword() {
 		return password;
+	}
+
+	public CreateUserCommand toCommand() {
+		return new CreateUserCommand(this.name, this.password);
 	}
 }

@@ -17,4 +17,16 @@ public class User {
 		this.name = name;
 		this.password = password;
 	}
+
+	public UserId getId() {
+		return id;
+	}
+
+	public UserName getName() {
+		return name;
+	}
+
+	public UserPassword getPassword() {
+		return password;
+	}
 }
