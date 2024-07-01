@@ -6,6 +6,8 @@ jar {
     enabled = false
 }
 
+version '1.0.0'
+
 dependencies {
     implementation project(':core:core-domain:user-domain')
     implementation project(':core:core-db:user-mysql-jpa-db')
