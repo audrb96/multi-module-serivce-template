@@ -2,6 +2,7 @@ package servicetemplate.application.error.factory;
 
 import org.springframework.http.ResponseEntity;
 import servicetemplate.application.error.dto.ErrorResponse;
+import servicetemplate.application.error.exception.ApplicationException;
 
 public final class ResponseEntityFactory {
 
@@ -11,6 +12,11 @@ public final class ResponseEntityFactory {
 
 	public static ResponseEntity<ErrorResponse> internalServerError(RuntimeException exception) {
 		return ResponseEntity.internalServerError()
+			.body(ErrorResponse.from(exception));
+	}
+
+	public static ResponseEntity<ErrorResponse> badRequest(ApplicationException exception) {
+		return ResponseEntity.badRequest()
 			.body(ErrorResponse.from(exception));
 	}
 }
