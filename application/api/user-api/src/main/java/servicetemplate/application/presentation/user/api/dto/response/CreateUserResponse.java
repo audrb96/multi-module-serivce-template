@@ -1,6 +1,6 @@
 package servicetemplate.application.presentation.user.api.dto.response;
 
-import servicetemplate.domain.User;
+import servicetemplate.domain.user.User;
 
 public class CreateUserResponse {
 

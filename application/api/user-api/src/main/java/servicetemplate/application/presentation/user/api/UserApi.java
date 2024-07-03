@@ -7,7 +7,7 @@ import servicetemplate.application.presentation.user.api.dto.response.CreateUser
 import servicetemplate.application.presentation.user.api.dto.response.GetUserByIdResponse;
 import servicetemplate.application.service.user.UserService;
 import servicetemplate.application.service.user.query.GetUserByIdQuery;
-import servicetemplate.domain.User;
+import servicetemplate.domain.user.User;
 
 import java.net.URI;
 
@@ -31,6 +31,7 @@ public class UserApi {
 	@GetMapping("/user/{userId}")
 	public ResponseEntity<GetUserByIdResponse> getById(@PathVariable Long userId) {
 		User user = service.getById(new GetUserByIdQuery(userId));
+		
 		return ResponseEntity.ok(GetUserByIdResponse.from(user));
 	}
 

@@ -1,8 +1,9 @@
-package servicetemplate.domain;
+package servicetemplate.domain.user;
 
-import servicetemplate.domain.vo.UserId;
-import servicetemplate.domain.vo.UserName;
-import servicetemplate.domain.vo.UserPassword;
+
+import servicetemplate.domain.user.vo.UserId;
+import servicetemplate.domain.user.vo.UserName;
+import servicetemplate.domain.user.vo.UserPassword;
 
 public class User {
 

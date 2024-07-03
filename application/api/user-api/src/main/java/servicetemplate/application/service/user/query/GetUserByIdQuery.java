@@ -1,6 +1,6 @@
 package servicetemplate.application.service.user.query;
 
-import servicetemplate.domain.vo.UserId;
+import servicetemplate.domain.user.vo.UserId;
 
 public class GetUserByIdQuery {
 

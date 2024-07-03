@@ -3,8 +3,8 @@ package servicetemplate.application.service.user;
 import org.springframework.stereotype.Component;
 import servicetemplate.application.service.user.command.CreateUserCommand;
 import servicetemplate.application.service.user.query.GetUserByIdQuery;
-import servicetemplate.domain.User;
-import servicetemplate.domain.UserRepository;
+import servicetemplate.domain.user.User;
+import servicetemplate.domain.user.UserRepository;
 
 @Component
 public class UserService {
