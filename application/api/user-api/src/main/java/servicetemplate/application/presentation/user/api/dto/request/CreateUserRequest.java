@@ -1,6 +1,6 @@
-package servicetemplate.application.presentation.api.dto.request;
+package servicetemplate.application.presentation.user.api.dto.request;
 
-import servicetemplate.application.service.command.CreateUserCommand;
+import servicetemplate.application.service.user.command.CreateUserCommand;
 
 public class CreateUserRequest {
 

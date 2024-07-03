@@ -1,4 +1,4 @@
-package servicetemplate.application.presentation.api.dto.response;
+package servicetemplate.application.presentation.user.api.dto.response;
 
 import servicetemplate.domain.User;
 

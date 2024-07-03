@@ -1,4 +1,4 @@
-package servicetemplate.application.service.query;
+package servicetemplate.application.service.user.query;
 
 import servicetemplate.domain.vo.UserId;
 

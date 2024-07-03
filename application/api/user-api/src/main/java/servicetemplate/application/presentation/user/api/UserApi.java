@@ -1,12 +1,12 @@
-package servicetemplate.application.presentation.api;
+package servicetemplate.application.presentation.user.api;
 
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-import servicetemplate.application.presentation.api.dto.request.CreateUserRequest;
-import servicetemplate.application.presentation.api.dto.response.GetUserByIdResponse;
-import servicetemplate.application.presentation.api.dto.response.CreateUserResponse;
-import servicetemplate.application.service.UserService;
-import servicetemplate.application.service.query.GetUserByIdQuery;
+import servicetemplate.application.presentation.user.api.dto.request.CreateUserRequest;
+import servicetemplate.application.presentation.user.api.dto.response.GetUserByIdResponse;
+import servicetemplate.application.presentation.user.api.dto.response.CreateUserResponse;
+import servicetemplate.application.service.user.UserService;
+import servicetemplate.application.service.user.query.GetUserByIdQuery;
 import servicetemplate.domain.User;
 
 import java.net.URI;
@@ -19,6 +19,7 @@ public class UserApi {
 	public UserApi(UserService service) {
 		this.service = service;
 	}
+
 
 	@PostMapping("/user")
 	public ResponseEntity<CreateUserResponse> create(@RequestBody CreateUserRequest request) {

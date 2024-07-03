@@ -1,4 +1,4 @@
-package servicetemplate.application.service.command;
+package servicetemplate.application.service.user.command;
 
 import servicetemplate.domain.User;
 import servicetemplate.domain.vo.UserId;

@@ -1,8 +1,8 @@
-package servicetemplate.application.service;
+package servicetemplate.application.service.user;
 
 import org.springframework.stereotype.Component;
-import servicetemplate.application.service.command.CreateUserCommand;
-import servicetemplate.application.service.query.GetUserByIdQuery;
+import servicetemplate.application.service.user.command.CreateUserCommand;
+import servicetemplate.application.service.user.query.GetUserByIdQuery;
 import servicetemplate.domain.User;
 import servicetemplate.domain.UserRepository;
 
