@@ -1,0 +1,21 @@
+FROM amazoncorretto:21
+
+ARG VERSION
+ARG APP
+
+WORKDIR /home/muhayu
+COPY ../application/api/$APP/build/libs/$APP-$VERSION.jar $APP.jar
+
+RUN yum update -y\
+    && yum install -y wget\
+    && mkdir -p /home/muhayu/properties\
+    && echo '' > /home/muhayu/properties/application.yml\
+    && ln -s /home/muhayu/properties/application.yml /home/muhayu/application.yml
+
+RUN rm -rf /etc/localtime
+RUN ln -s /usr/share/zoneinfo/Asia/Seoul /etc/localtime
+
+EXPOSE 8080
+
+ENTRYPOINT ["java", "-XX:+UseContainerSupport", "-Djava.net.preferIPv4Stack=true", "-Dspring.profiles.active=${USE_PROFILE}", "-jar",  "user-api.jar"]
+
