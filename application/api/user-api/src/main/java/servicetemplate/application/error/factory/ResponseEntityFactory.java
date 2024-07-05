@@ -3,6 +3,9 @@ package servicetemplate.application.error.factory;
 import org.springframework.http.ResponseEntity;
 import servicetemplate.application.error.dto.ErrorResponse;
 import servicetemplate.application.error.exception.ApplicationException;
+import servicetemplate.error.exception.NotFoundDomainException;
+
+import static org.springframework.http.HttpStatus.NOT_FOUND;
 
 public final class ResponseEntityFactory {
 
@@ -17,6 +20,12 @@ public final class ResponseEntityFactory {
 
 	public static ResponseEntity<ErrorResponse> badRequest(ApplicationException exception) {
 		return ResponseEntity.badRequest()
+			.body(ErrorResponse.from(exception));
+	}
+
+	public static ResponseEntity<ErrorResponse> notFound(NotFoundDomainException exception) {
+		return ResponseEntity
+			.status(NOT_FOUND)
 			.body(ErrorResponse.from(exception));
 	}
 }

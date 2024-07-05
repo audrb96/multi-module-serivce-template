@@ -4,6 +4,9 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import servicetemplate.application.error.exception.ApplicationException;
 import servicetemplate.application.error.key.ApplicationErrorKey;
 import servicetemplate.application.error.key.ApplicationErrorKeys;
+import servicetemplate.error.exception.DomainException;
+import servicetemplate.error.key.DomainErrorKey;
+import servicetemplate.error.key.DomainErrorKeys;
 
 import java.util.Collections;
 import java.util.List;
@@ -33,6 +36,10 @@ public class ErrorResponse {
 	}
 
 	public static ErrorResponse from(ApplicationException exception) {
+		return new ErrorResponse(exception.getCode().getCode(), exception.getCode().name(), exception.getMessage(), Keys.from(exception.getKeys()));
+	}
+
+	public static ErrorResponse from(DomainException exception) {
 		return new ErrorResponse(exception.getCode().getCode(), exception.getCode().name(), exception.getMessage(), Keys.from(exception.getKeys()));
 	}
 
@@ -69,6 +76,14 @@ public class ErrorResponse {
 			);
 		}
 
+		public static Keys from(DomainErrorKeys keys) {
+			return new Keys(
+				keys.getKeys().stream()
+					.map(Key::from)
+					.collect(Collectors.toList())
+			);
+		}
+
 		public static Keys empty() {
 			return new Keys(Collections.emptyList());
 		}
@@ -90,6 +105,10 @@ public class ErrorResponse {
 		}
 
 		public static Key from(ApplicationErrorKey key) {
+			return new Key(key.getName(), key.getValue());
+		}
+
+		public static Key from(DomainErrorKey key) {
 			return new Key(key.getName(), key.getValue());
 		}
 

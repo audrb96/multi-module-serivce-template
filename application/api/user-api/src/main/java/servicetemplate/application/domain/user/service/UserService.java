@@ -5,6 +5,7 @@ import servicetemplate.application.domain.user.service.command.CreateUserCommand
 import servicetemplate.application.domain.user.service.query.GetUserByIdQuery;
 import servicetemplate.domain.user.User;
 import servicetemplate.domain.user.UserRepository;
+import servicetemplate.error.exception.NotFoundDomainException;
 
 @Component
 public class UserService {
@@ -21,6 +22,6 @@ public class UserService {
 
 	public User getById(GetUserByIdQuery query) {
 		return repository.findById(query.toUserId())
-			.orElseThrow(() -> new IllegalArgumentException("사용자를 찾을 수 없습니다."));
+			.orElseThrow(() -> NotFoundDomainException.user(query.toUserId()));
 	}
 }
