@@ -22,9 +22,10 @@ public class ErrorResponse {
 
 	private final String message;
 
-	private final Keys keys;
+	@JsonInclude(JsonInclude.Include.NON_EMPTY)
+	private final List<Key> keys;
 
-	public ErrorResponse(int code, String name, String message, Keys keys) {
+	public ErrorResponse(int code, String name, String message, List<Key> keys) {
 		this.code = code;
 		this.name = name;
 		this.message = message;
@@ -32,15 +33,27 @@ public class ErrorResponse {
 	}
 
 	public static ErrorResponse from(RuntimeException exception) {
-		return new ErrorResponse(RUNTIME_ERROR.getCode(), RUNTIME_ERROR.name(), exception.getMessage(), Keys.empty());
+		return new ErrorResponse(RUNTIME_ERROR.getCode(), RUNTIME_ERROR.name(), exception.getMessage(), Collections.emptyList());
 	}
 
 	public static ErrorResponse from(ApplicationException exception) {
-		return new ErrorResponse(exception.getCode().getCode(), exception.getCode().name(), exception.getMessage(), Keys.from(exception.getKeys()));
+		return new ErrorResponse(exception.getCode().getCode(), exception.getCode().name(), exception.getMessage(), toKeys(exception.getKeys()));
 	}
 
 	public static ErrorResponse from(DomainException exception) {
-		return new ErrorResponse(exception.getCode().getCode(), exception.getCode().name(), exception.getMessage(), Keys.from(exception.getKeys()));
+		return new ErrorResponse(exception.getCode().getCode(), exception.getCode().name(), exception.getMessage(), toKeys(exception.getKeys()));
+	}
+
+	public static List<Key> toKeys(ApplicationErrorKeys keys) {
+		return keys.getKeys().stream()
+			.map(Key::from)
+			.collect(Collectors.toList());
+	}
+
+	public static List<Key> toKeys(DomainErrorKeys keys) {
+		return keys.getKeys().stream()
+			.map(Key::from)
+			.collect(Collectors.toList());
 	}
 
 	public int getCode() {
@@ -55,42 +68,8 @@ public class ErrorResponse {
 		return message;
 	}
 
-	public Keys getKeys() {
+	public List<Key> getKeys() {
 		return keys;
-	}
-
-	private static final class Keys {
-
-		@JsonInclude(JsonInclude.Include.NON_EMPTY)
-		private final List<Key> keys;
-
-		public Keys(List<Key> keys) {
-			this.keys = keys;
-		}
-
-		public static Keys from(ApplicationErrorKeys keys) {
-			return new Keys(
-				keys.getKeys().stream()
-					.map(Key::from)
-					.collect(Collectors.toList())
-			);
-		}
-
-		public static Keys from(DomainErrorKeys keys) {
-			return new Keys(
-				keys.getKeys().stream()
-					.map(Key::from)
-					.collect(Collectors.toList())
-			);
-		}
-
-		public static Keys empty() {
-			return new Keys(Collections.emptyList());
-		}
-
-		public List<Key> getKeys() {
-			return keys;
-		}
 	}
 
 	private static final class Key {
