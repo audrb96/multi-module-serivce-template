@@ -10,4 +10,5 @@ include 'core:core-domain:user-domain'
 include 'core:core-db:user-mariadb-jpa-db'
 include 'support'
 include 'support:yaml-importer'
+include 'core:core-logger'
 
