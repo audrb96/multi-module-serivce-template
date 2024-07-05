@@ -1,11 +1,11 @@
-package servicetemplate.repository.user.implement;
+package servicetemplate.repository.domain.user.implement;
 
 import org.springframework.stereotype.Repository;
 import servicetemplate.domain.user.User;
 import servicetemplate.domain.user.UserRepository;
 import servicetemplate.domain.user.vo.UserId;
-import servicetemplate.repository.user.UserJPARepository;
-import servicetemplate.repository.user.entity.UserEntity;
+import servicetemplate.repository.domain.user.UserJPARepository;
+import servicetemplate.repository.domain.user.entity.UserEntity;
 
 import java.util.Optional;
 

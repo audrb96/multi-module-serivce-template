@@ -1,12 +1,12 @@
-package servicetemplate.application.presentation.user.api;
+package servicetemplate.application.domain.user.api;
 
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-import servicetemplate.application.presentation.user.api.dto.request.CreateUserRequest;
-import servicetemplate.application.presentation.user.api.dto.response.CreateUserResponse;
-import servicetemplate.application.presentation.user.api.dto.response.GetUserByIdResponse;
-import servicetemplate.application.service.user.UserService;
-import servicetemplate.application.service.user.query.GetUserByIdQuery;
+import servicetemplate.application.domain.user.api.dto.request.CreateUserRequest;
+import servicetemplate.application.domain.user.api.dto.response.CreateUserResponse;
+import servicetemplate.application.domain.user.api.dto.response.GetUserByIdResponse;
+import servicetemplate.application.domain.user.service.UserService;
+import servicetemplate.application.domain.user.service.query.GetUserByIdQuery;
 import servicetemplate.domain.user.User;
 
 import java.net.URI;

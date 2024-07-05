@@ -1,4 +1,4 @@
-package servicetemplate.repository.user.entity;
+package servicetemplate.repository.domain.user.entity;
 
 import jakarta.persistence.*;
 import servicetemplate.domain.user.User;
