@@ -31,7 +31,7 @@ public class UserApi {
 	@GetMapping("/user/{userId}")
 	public ResponseEntity<GetUserByIdResponse> getById(@PathVariable Long userId) {
 		User user = service.getById(new GetUserByIdQuery(userId));
-		
+
 		return ResponseEntity.ok(GetUserByIdResponse.from(user));
 	}
 

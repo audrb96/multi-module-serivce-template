@@ -9,6 +9,8 @@ import static servicetemplate.error.code.DomainErrorCode.NOT_FOUND_USER;
 
 public class NotFoundDomainException extends DomainException {
 
+	private static final String ERROR_KEY_USER_ID = "userId";
+
 	public NotFoundDomainException(DomainErrorCode code, DomainErrorKeys keys) {
 		super(code, keys);
 	}
@@ -17,7 +19,7 @@ public class NotFoundDomainException extends DomainException {
 		return new NotFoundDomainException(
 			NOT_FOUND_USER,
 			DomainErrorKeys.of(
-				new DomainErrorKey("userId", userId.id().toString())
+				new DomainErrorKey(ERROR_KEY_USER_ID, userId.id().toString())
 			)
 		);
 	}
