@@ -1,0 +1,4 @@
+logging:
+  level:
+    web: info
+  config: classpath:logback-local.xml
