@@ -1,4 +1,6 @@
 logging:
   level:
     web: info
+  pattern:
+    correlation: "%d{yyyy-MM-dd HH:mm:ss} %-5p %c{1}:%L - [${spring.application.name:},%X{traceId:-},%X{spanId:-}] - %m%n"
   config: classpath:logback-local.xml

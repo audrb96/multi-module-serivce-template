@@ -9,3 +9,9 @@ server:
     accesslog:
       enabled: true
       pattern: '%{yyyy-MM-dd HH:mm:ss}t %s %r %{User-Agent}i %{Referer}i %a %b'
+
+management:
+  tracing:
+    sampling:
+      probability: 1
+    enabled: true

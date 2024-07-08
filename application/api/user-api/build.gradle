@@ -13,7 +13,10 @@ dependencies {
     implementation project(':core:core-db:user-mariadb-jpa-db')
     implementation project(':core:core-logger')
     implementation project(':support:yaml-importer')
+    implementation project(':core:core-deadletter')
     implementation project(':core:core-common')
-    
+
     implementation 'org.springframework.boot:spring-boot-starter-web'
+    implementation 'io.micrometer:micrometer-tracing-bridge-brave'
+    implementation 'org.springframework.boot:spring-boot-starter-actuator'
 }
