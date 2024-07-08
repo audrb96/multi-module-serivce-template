@@ -1,25 +1,14 @@
 package servicetemplate.error.exception;
 
 import servicetemplate.error.code.DomainErrorCode;
-import servicetemplate.error.key.DomainErrorKeys;
+import servicetemplate.error.key.DomainErrorKey;
 
-public class DomainException extends RuntimeException {
+import java.util.List;
+import java.util.stream.Collectors;
 
-	private final DomainErrorCode code;
+public class DomainException extends CommonException {
 
-	private final DomainErrorKeys keys;
-
-	public DomainException(DomainErrorCode code, DomainErrorKeys keys) {
-		super(code.getMessage());
-		this.code = code;
-		this.keys = keys;
-	}
-
-	public DomainErrorCode getCode() {
-		return code;
-	}
-
-	public DomainErrorKeys getKeys() {
-		return keys;
+	public DomainException(DomainErrorCode code, List<DomainErrorKey> keys) {
+		super(code, keys.stream().collect(Collectors.toList()));
 	}
 }

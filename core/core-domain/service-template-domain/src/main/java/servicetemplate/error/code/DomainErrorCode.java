@@ -1,6 +1,6 @@
 package servicetemplate.error.code;
 
-public enum DomainErrorCode {
+public enum DomainErrorCode implements ErrorCode {
 
 	NOT_FOUND_USER(2001, "사용자를 찾을 수 없습니다.");
 
@@ -13,11 +13,13 @@ public enum DomainErrorCode {
 		this.message = message;
 	}
 
+	@Override
 	public int getCode() {
-		return code;
+		return this.code;
 	}
 
+	@Override
 	public String getMessage() {
-		return message;
+		return this.message;
 	}
 }

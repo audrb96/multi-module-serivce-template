@@ -1,6 +1,8 @@
 package servicetemplate.application.error.key;
 
-public class ApplicationErrorKey {
+import servicetemplate.key.Key;
+
+public class ApplicationErrorKey implements Key {
 
 	private final String name;
 
@@ -11,10 +13,12 @@ public class ApplicationErrorKey {
 		this.value = value;
 	}
 
+	@Override
 	public String getName() {
 		return name;
 	}
 
+	@Override
 	public String getValue() {
 		return value;
 	}

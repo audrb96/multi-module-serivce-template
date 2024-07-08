@@ -1,6 +1,8 @@
 package servicetemplate.error.key;
 
-public class DomainErrorKey {
+import servicetemplate.key.Key;
+
+public class DomainErrorKey implements Key {
 
 	private final String name;
 
@@ -11,10 +13,12 @@ public class DomainErrorKey {
 		this.value = value;
 	}
 
+	@Override
 	public String getName() {
 		return name;
 	}
 
+	@Override
 	public String getValue() {
 		return value;
 	}

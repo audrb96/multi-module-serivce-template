@@ -1,25 +1,15 @@
 package servicetemplate.application.error.exception;
 
 import servicetemplate.application.error.code.ApplicationErrorCode;
-import servicetemplate.application.error.key.ApplicationErrorKeys;
+import servicetemplate.application.error.key.ApplicationErrorKey;
+import servicetemplate.error.exception.CommonException;
 
-public class ApplicationException extends RuntimeException {
+import java.util.List;
+import java.util.stream.Collectors;
 
-	private final ApplicationErrorCode code;
+public class ApplicationException extends CommonException {
 
-	private final ApplicationErrorKeys keys;
-
-	public ApplicationException(ApplicationErrorCode code, ApplicationErrorKeys keys) {
-		super(code.getMessage());
-		this.code = code;
-		this.keys = keys;
-	}
-
-	public ApplicationErrorCode getCode() {
-		return code;
-	}
-
-	public ApplicationErrorKeys getKeys() {
-		return keys;
+	public ApplicationException(ApplicationErrorCode code, List<ApplicationErrorKey> keys) {
+		super(code, keys.stream().collect(Collectors.toList()));
 	}
 }

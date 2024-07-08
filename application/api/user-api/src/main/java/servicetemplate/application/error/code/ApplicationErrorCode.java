@@ -1,6 +1,8 @@
 package servicetemplate.application.error.code;
 
-public enum ApplicationErrorCode {
+import servicetemplate.error.code.ErrorCode;
+
+public enum ApplicationErrorCode implements ErrorCode {
 
 	RUNTIME_ERROR(1000, "런타임 에러"),
 	CANNOT_CREATE_USER_EXIST_NAME(1001, "존재하는 이름의 사용자는 생성할 수 없습니다.");
@@ -13,10 +15,12 @@ public enum ApplicationErrorCode {
 		this.message = message;
 	}
 
+	@Override
 	public int getCode() {
 		return code;
 	}
 
+	@Override
 	public String getMessage() {
 		return message;
 	}
