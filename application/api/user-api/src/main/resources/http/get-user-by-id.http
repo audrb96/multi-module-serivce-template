@@ -1,5 +1,6 @@
 ## 사용자 조회
-GET http://localhost:8080/user/3
+GET http://localhost:8080/user/1
+
 
 
 
