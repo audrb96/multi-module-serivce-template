@@ -1,8 +1,8 @@
 package servicetemplate.application.error.dto;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
+import servicetemplate.dto.key.Key;
 import servicetemplate.error.exception.CommonException;
-import servicetemplate.key.Key;
 
 import java.util.Collections;
 import java.util.List;

@@ -1,7 +1,7 @@
 package servicetemplate.error.exception;
 
+import servicetemplate.dto.key.Key;
 import servicetemplate.error.code.ErrorCode;
-import servicetemplate.key.Key;
 
 import java.util.List;
 

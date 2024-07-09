@@ -1,4 +1,4 @@
-package servicetemplate.key;
+package servicetemplate.dto.key;
 
 public interface Key {
 

@@ -1,6 +1,6 @@
 package servicetemplate.logger.dto;
 
-import servicetemplate.key.Key;
+import servicetemplate.dto.key.Key;
 
 import java.util.List;
 

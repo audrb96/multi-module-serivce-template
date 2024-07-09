@@ -13,4 +13,6 @@ include 'core:core-common'
 include 'core:core-deadletter'
 include 'support'
 include 'support:yaml-importer'
+include 'application:messaging'
+include 'application:messaging:user-kafka-worker'
 

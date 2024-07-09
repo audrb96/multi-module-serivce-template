@@ -1,6 +1,6 @@
 package servicetemplate.error.key;
 
-import servicetemplate.key.Key;
+import servicetemplate.dto.key.Key;
 
 public class DomainErrorKey implements Key {
 

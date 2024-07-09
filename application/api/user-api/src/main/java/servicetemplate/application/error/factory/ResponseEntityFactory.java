@@ -10,7 +10,7 @@ import static org.springframework.http.HttpStatus.NOT_FOUND;
 public final class ResponseEntityFactory {
 
 	public ResponseEntityFactory() {
-		throw new UnsupportedOperationException(String.format("%s의 인스턴스는 생성되어서 안됩니다.", this.getClass().getName()));
+		throw new UnsupportedOperationException(this.getClass().getName() + "의 인스턴스는 생성되어서 안됩니다.");
 	}
 
 	public static ResponseEntity<ErrorResponse> internalServerError(RuntimeException exception) {
