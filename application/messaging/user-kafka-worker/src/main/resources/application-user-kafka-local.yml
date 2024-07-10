@@ -24,6 +24,7 @@ spring:
         heartbeat-interval: 10000
       group-id: ${spring.application.name}-local
     producer:
+      transaction-id-prefix: tx-
       key-serializer: org.apache.kafka.common.serialization.StringSerializer
       value-serializer: org.springframework.kafka.support.serializer.JsonSerializer
       acks: all
@@ -36,6 +37,9 @@ management:
     sampling:
       probability: 1
     enabled: true
+  metrics:
+    tags:
+      application: ${spring.application.name}
 
 kafka:
   consumer:

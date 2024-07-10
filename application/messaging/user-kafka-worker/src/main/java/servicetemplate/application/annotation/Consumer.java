@@ -1,4 +1,4 @@
-package servicetemplate.application.domain.user.consumer.annotation;
+package servicetemplate.application.annotation;
 
 import org.springframework.core.annotation.AliasFor;
 import org.springframework.stereotype.Component;
