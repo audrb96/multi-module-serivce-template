@@ -44,7 +44,7 @@ public class KafkaConsumerConfig {
 	public ConcurrentKafkaListenerContainerFactory<String, String> kafkaListenerContainerFactory(SslBundles sslBundles) {
 		ConcurrentKafkaListenerContainerFactory<String, String> factory = new ConcurrentKafkaListenerContainerFactory<>();
 		factory.getContainerProperties().setObservationEnabled(true);
-		factory.getContainerProperties().setAckMode(ContainerProperties.AckMode.MANUAL);
+		factory.getContainerProperties().setAckMode(ContainerProperties.AckMode.MANUAL_IMMEDIATE);
 		factory.setConsumerFactory(consumerFactory(sslBundles));
 
 		return factory;

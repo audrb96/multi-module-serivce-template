@@ -23,6 +23,7 @@ spring:
         session.timeout.ms: 30000
         heartbeat-interval: 10000
       group-id: ${spring.application.name}-local
+      isolation-level: read_committed
     producer:
       transaction-id-prefix: tx-
       key-serializer: org.apache.kafka.common.serialization.StringSerializer
@@ -42,7 +43,10 @@ management:
       application: ${spring.application.name}
 
 kafka:
+  producer:
+    topic:
+      user-created: queuing.copykiller.service-template.user-created
   consumer:
     topic:
-      login-user: queuing.copykiller.service-template.user.login
+      login-user: queuing.copykiller.service-template.user-login
 

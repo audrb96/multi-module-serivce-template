@@ -11,9 +11,9 @@ version '1.0.0'
 dependencies {
     implementation project(':core:core-domain:service-template-domain')
     implementation project(':core:core-db:user-mariadb-jpa-db')
-    implementation project(':core:core-logger')
+    implementation project(':support:logger')
     implementation project(':support:yaml-importer')
-    implementation project(':core:core-deadletter')
+    implementation project(':support:deadletter')
     implementation project(':core:core-common')
 
     implementation 'org.springframework.boot:spring-boot-starter-web'
