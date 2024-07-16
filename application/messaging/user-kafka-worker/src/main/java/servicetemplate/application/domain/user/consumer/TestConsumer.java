@@ -8,8 +8,8 @@ import org.springframework.messaging.handler.annotation.Header;
 import servicetemplate.application.annotation.Consumer;
 import servicetemplate.application.common.util.JsonUtil;
 import servicetemplate.application.domain.user.consumer.dto.UserCreatedEvent;
-import servicetemplate.logger.JsonLogger;
-import servicetemplate.logger.SystemLogger;
+import servicetemplate.support.logger.JsonLogger;
+import servicetemplate.support.logger.SystemLogger;
 
 @Consumer
 public class TestConsumer {

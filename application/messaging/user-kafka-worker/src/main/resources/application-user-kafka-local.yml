@@ -31,7 +31,6 @@ spring:
       acks: all
     listener:
       concurrency: 3
-      ack-mode: manual_immediate
 
 management:
   tracing:

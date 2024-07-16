@@ -1,4 +1,7 @@
 dependencies {
-    implementation 'org.springframework.kafka:spring-kafka'
-    api 'com.muhayu:message:1.0.38'
+    implementation project(':core:core-client:google-chat-feign-client')
+    implementation project(':core:core-client:core-feign')
+    implementation project(':core:core-common')
+
+    implementation 'org.springframework:spring-context'
 }

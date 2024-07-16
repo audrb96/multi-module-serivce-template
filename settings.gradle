@@ -15,4 +15,7 @@ include 'support'
 include 'support:yaml-importer'
 include 'application:messaging'
 include 'application:messaging:user-kafka-worker'
+include 'core:core-client'
+include 'core:core-client:google-chat-feign-client'
+include 'core:core-client:core-feign'
 

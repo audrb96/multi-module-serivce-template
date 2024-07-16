@@ -1,2 +1,2 @@
 org.springframework.boot.env.EnvironmentPostProcessor=\
-servicetemplate.yaml.importer.CustomYamlPropertiesEnvironmentPostProcessor
+servicetemplate.support.yaml.importer.CustomYamlPropertiesEnvironmentPostProcessor

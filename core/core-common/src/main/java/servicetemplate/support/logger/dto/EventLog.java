@@ -1,4 +1,4 @@
-package servicetemplate.logger.dto;
+package servicetemplate.support.logger.dto;
 
 import servicetemplate.dto.event.Event;
 
