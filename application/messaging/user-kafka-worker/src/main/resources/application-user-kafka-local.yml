@@ -2,6 +2,11 @@ spring:
   application:
     name: user-kafka
 
+  ## TODO CPU INTENSIVE(이미지 프로세싱, 동영상 인코딩 등)한 작업의 경우 false로 변경
+  threads:
+    virtual:
+      enabled: true
+
   ## TODO 서비스에 맞는 kafka 설정, bootstrap-server
   kafka:
     bootstrap-servers:

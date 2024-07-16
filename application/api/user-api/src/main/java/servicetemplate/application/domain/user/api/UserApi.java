@@ -22,10 +22,11 @@ public class UserApi {
 
 
 	@PostMapping("/user")
-	public ResponseEntity<CreateUserResponse> create(@RequestBody CreateUserRequest request) {
+	public ResponseEntity<CreateUserResponse> create(@RequestBody CreateUserRequest request) throws InterruptedException {
 		User user = service.create(request.toCommand());
 
-		return ResponseEntity.created(URI.create(String.format("/user/%d", user.getId().id()))).build();
+		return ResponseEntity.created(URI.create(String.format("/user/%d", user.getId().id())))
+			.body(CreateUserResponse.from(user));
 	}
 
 	@GetMapping("/user/{userId}")

@@ -2,6 +2,11 @@ spring:
   application:
     name: user-api
 
+  ## TODO CPU INTENSIVE(이미지 프로세싱, 동영상 인코딩 등)한 작업의 경우 false로 변경
+  threads:
+    virtual:
+      enabled: true
+
 server:
   port: 8080
   compression:
