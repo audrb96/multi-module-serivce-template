@@ -20,9 +20,8 @@ public class UserApi {
 		this.service = service;
 	}
 
-
 	@PostMapping("/user")
-	public ResponseEntity<CreateUserResponse> create(@RequestBody CreateUserRequest request) throws InterruptedException {
+	public ResponseEntity<CreateUserResponse> create(@RequestBody CreateUserRequest request) {
 		User user = service.create(request.toCommand());
 
 		return ResponseEntity.created(URI.create(String.format("/user/%d", user.getId().id())))

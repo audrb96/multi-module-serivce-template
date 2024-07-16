@@ -33,7 +33,7 @@ public class RuntimeExceptionHandler {
 		DeadLetter deadLetter = DeadLetterFactory.create(
 			clockHolder.getCurrentTime(),
 			exception,
-			tracer.currentSpan().toString(),
+			tracer.currentSpan().context().spanId(),
 			tracer.currentSpan().context().traceId()
 		);
 		deadLetterSender.send(deadLetter);

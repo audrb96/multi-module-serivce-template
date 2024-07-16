@@ -34,7 +34,7 @@ public class DomainExceptionHandler {
 		DeadLetter deadLetter = DeadLetterFactory.create(
 			clockHolder.getCurrentTime(),
 			exception,
-			tracer.currentSpan().toString(),
+			tracer.currentSpan().context().spanId(),
 			tracer.currentSpan().context().traceId(),
 			exception.getKeys()
 		);
