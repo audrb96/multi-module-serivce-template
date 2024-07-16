@@ -11,7 +11,6 @@ import servicetemplate.application.domain.user.consumer.dto.CreateUserEvent;
 import servicetemplate.application.domain.user.consumer.dto.UserCreatedEvent;
 import servicetemplate.application.domain.user.producer.UserCreatedEventProducer;
 import servicetemplate.application.domain.user.service.UserService;
-import servicetemplate.client.feign.config.FeignConfigChecker;
 import servicetemplate.domain.user.User;
 import servicetemplate.support.logger.JsonLogger;
 import servicetemplate.support.logger.SystemLogger;
@@ -21,14 +20,11 @@ public class CreateUserConsumer {
 
 	private final UserService userService;
 	private final UserCreatedEventProducer userCreatedEventProducer;
-	private final FeignConfigChecker checker;
-
 	private final SystemLogger logger = new JsonLogger(this.getClass());
 
-	public CreateUserConsumer(UserService userService, UserCreatedEventProducer userCreatedEventProducer, FeignConfigChecker checker) {
+	public CreateUserConsumer(UserService userService, UserCreatedEventProducer userCreatedEventProducer) {
 		this.userService = userService;
 		this.userCreatedEventProducer = userCreatedEventProducer;
-		this.checker = checker;
 	}
 
 	@Transactional("kafkaTransactionManager")
@@ -39,7 +35,6 @@ public class CreateUserConsumer {
 		ConsumerRecord<String, String> record,
 		@Header(KafkaHeaders.RECEIVED_TOPIC) String topic
 	) {
-		checker.checkFeignConfig();
 		CreateUserEvent event = JsonUtil.convertToObject(record.value(), CreateUserEvent.class);
 		logger.logEvent(event, topic);
 		User createdUser = userService.create(event.toCommand());

@@ -1,4 +1,6 @@
 version: '3.8'
+
+## TODO 필요한 인프라만 설정해주세요
 services:
   user-service-db:
     image: mariadb:11.2.4

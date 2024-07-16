@@ -2,6 +2,7 @@ spring:
   application:
     name: user-kafka
 
+  ## TODO 서비스에 맞는 kafka 설정, bootstrap-server
   kafka:
     bootstrap-servers:
       - localhost:9092
