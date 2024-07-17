@@ -2,7 +2,6 @@ package servicetemplate.application.domain.user.consumer;
 
 import org.apache.kafka.clients.consumer.ConsumerRecord;
 import org.springframework.kafka.annotation.KafkaListener;
-import org.springframework.kafka.support.Acknowledgment;
 import org.springframework.kafka.support.KafkaHeaders;
 import org.springframework.messaging.handler.annotation.Header;
 import servicetemplate.application.annotation.Consumer;
@@ -18,14 +17,12 @@ public class TestConsumer {
 
 
 	@KafkaListener(
-		topics = {"${kafka.consumer.topic.login-user}"}
+		topics = {"${kafka.producer.topic.user-created}"}
 	)
 	public void consume(
 		ConsumerRecord<String, String> record,
-		Acknowledgment acknowledgment,
 		@Header(KafkaHeaders.RECEIVED_TOPIC) String topic
 	) {
-		acknowledgment.acknowledge();
 		UserCreatedEvent event = JsonUtil.convertToObject(record.value(), UserCreatedEvent.class);
 		logger.logEvent(event, topic);
 	}

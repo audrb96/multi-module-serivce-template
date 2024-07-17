@@ -1,6 +1,8 @@
 package servicetemplate.application.config;
 
 import io.micrometer.core.instrument.MeterRegistry;
+import org.apache.kafka.clients.consumer.ConsumerConfig;
+import org.apache.kafka.clients.consumer.CooperativeStickyAssignor;
 import org.springframework.boot.autoconfigure.kafka.KafkaProperties;
 import org.springframework.boot.ssl.SslBundles;
 import org.springframework.context.annotation.Bean;
@@ -29,6 +31,7 @@ public class KafkaConsumerConfig {
 	@Bean
 	public Map<String, Object> consumerConfigs(SslBundles sslBundles) {
 		Map<String, Object> props = new HashMap<>(kafkaProperties.buildConsumerProperties(sslBundles));
+		props.put(ConsumerConfig.PARTITION_ASSIGNMENT_STRATEGY_CONFIG, CooperativeStickyAssignor.class.getName());
 
 		return props;
 	}
@@ -37,6 +40,7 @@ public class KafkaConsumerConfig {
 	public ConsumerFactory<String, String> consumerFactory(SslBundles sslBundles) {
 		ConsumerFactory<String, String> factory = new DefaultKafkaConsumerFactory<>(consumerConfigs(sslBundles));
 		factory.addListener(new MicrometerConsumerListener<>(meterRegistry)); // adds native Kafka consumer metrics
+		
 		return factory;
 	}
 

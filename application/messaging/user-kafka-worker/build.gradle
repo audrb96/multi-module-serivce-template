@@ -18,8 +18,8 @@ dependencies {
     implementation project(':core:core-client:google-chat-feign-client')
     implementation project(':core:core-client:core-feign')
 
-
     implementation 'org.springframework.kafka:spring-kafka'
+    implementation 'com.fasterxml.jackson.core:jackson-databind:2.17.1'
     implementation 'io.micrometer:micrometer-tracing-bridge-brave'
     implementation 'org.springframework.boot:spring-boot-starter-actuator'
 }
