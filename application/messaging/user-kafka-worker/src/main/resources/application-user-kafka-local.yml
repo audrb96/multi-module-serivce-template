@@ -54,4 +54,3 @@ kafka:
   consumer:
     topic:
       login-user: queuing.copykiller.service-template.user-login
-

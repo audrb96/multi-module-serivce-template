@@ -34,8 +34,7 @@ public class ApplicationExceptionHandler {
 			clockHolder.getCurrentTime(),
 			exception,
 			tracer.currentSpan().context().spanId(),
-			tracer.currentSpan().context().traceId(),
-			exception.getKeys()
+			tracer.currentSpan().context().traceId()
 		);
 		deadLetterSender.send(deadLetter);
 

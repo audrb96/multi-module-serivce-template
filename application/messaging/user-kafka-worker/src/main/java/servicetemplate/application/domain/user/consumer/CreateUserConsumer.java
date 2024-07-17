@@ -29,7 +29,8 @@ public class CreateUserConsumer {
 
 	@Transactional("kafkaTransactionManager")
 	@KafkaListener(
-		topics = {"${kafka.consumer.topic.login-user}"}
+		topics = {"${kafka.consumer.topic.login-user}"},
+		errorHandler = "handleCreateUser"
 	)
 	public void consume(
 		ConsumerRecord<String, String> record,

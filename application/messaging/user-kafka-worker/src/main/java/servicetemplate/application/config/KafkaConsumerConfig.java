@@ -40,7 +40,7 @@ public class KafkaConsumerConfig {
 	public ConsumerFactory<String, String> consumerFactory(SslBundles sslBundles) {
 		ConsumerFactory<String, String> factory = new DefaultKafkaConsumerFactory<>(consumerConfigs(sslBundles));
 		factory.addListener(new MicrometerConsumerListener<>(meterRegistry)); // adds native Kafka consumer metrics
-		
+
 		return factory;
 	}
 

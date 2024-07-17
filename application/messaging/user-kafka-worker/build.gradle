@@ -15,7 +15,6 @@ dependencies {
     implementation project(':support:yaml-importer')
     implementation project(':support:deadletter')
     implementation project(':core:core-common')
-    implementation project(':core:core-client:google-chat-feign-client')
     implementation project(':core:core-client:core-feign')
 
     implementation 'org.springframework.kafka:spring-kafka'
