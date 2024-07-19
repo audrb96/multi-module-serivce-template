@@ -20,9 +20,9 @@ public class FeignConfig {
 	@Bean
 	public Request.Options options() {
 		return new Request.Options(
-			60000,
+			60,
 			TimeUnit.SECONDS,
-			180000,
+			180,
 			TimeUnit.SECONDS,
 			true
 		);

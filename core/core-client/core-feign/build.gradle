@@ -2,5 +2,5 @@ dependencies {
     implementation project(':core:core-common')
     implementation project(':support:logger')
 
-    api 'org.springframework.cloud:spring-cloud-starter-openfeign'
+    implementation 'org.springframework.cloud:spring-cloud-starter-openfeign'
 }

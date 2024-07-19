@@ -9,9 +9,7 @@ public class RequestLog {
 
 	private final String configKey;
 	private final String url;
-
 	private final String method;
-
 	private final Map<String, Collection<String>> headers;
 
 	public RequestLog(String configKey, String url, String method, Map<String, Collection<String>> headers) {

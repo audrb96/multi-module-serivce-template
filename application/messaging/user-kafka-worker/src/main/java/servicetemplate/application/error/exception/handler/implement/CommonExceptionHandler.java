@@ -31,6 +31,7 @@ public class CommonExceptionHandler implements ExceptionHandler {
 		return CommonException.class;
 	}
 
+	@Override
 	public void handle(Event event, Exception exception) {
 		CommonException commonException = (CommonException) exception;
 		DeadLetter deadLetter = DeadLetterFactory.create(
@@ -39,7 +40,7 @@ public class CommonExceptionHandler implements ExceptionHandler {
 			tracer.currentSpan().context().spanId(),
 			tracer.currentSpan().context().traceId()
 		);
-		
+
 		logger.logException(commonException);
 		deadLetterSender.send(deadLetter);
 	}

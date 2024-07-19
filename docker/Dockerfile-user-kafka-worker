@@ -17,4 +17,4 @@ RUN ln -s /usr/share/zoneinfo/Asia/Seoul /etc/localtime
 
 EXPOSE 8080
 
-ENTRYPOINT ["java", "-XX:+UseContainerSupport", "-Djava.net.preferIPv4Stack=true", "-Dspring.profiles.active=${USE_PROFILE}", "-jar",  "user-api.jar"]
+ENTRYPOINT ["java", "-XX:+UseContainerSupport", "-Djava.net.preferIPv4Stack=true", "-Dspring.profiles.active=${USE_PROFILE}", "-jar",  "user-kafka-worker.jar"]
