@@ -9,13 +9,13 @@ jar {
 version '1.0.0'
 
 dependencies {
-    implementation project(':core:core-domain:service-template-domain')
-    implementation project(':core:core-db:user-mariadb-jpa-db')
+    implementation project(':core:domain:service-template-domain')
+    implementation project(':core:infra:database:service-template-mariadb-jpa')
     implementation project(':support:logger')
     implementation project(':support:yaml-importer')
     implementation project(':support:deadletter')
-    implementation project(':core:core-common')
-    implementation project(':core:core-client:core-feign')
+    implementation project(':core:common')
+    implementation project(':core:infra:client:core-feign')
 
     implementation 'org.springframework.kafka:spring-kafka'
     implementation 'com.fasterxml.jackson.core:jackson-databind:2.17.1'

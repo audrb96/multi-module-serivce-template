@@ -1,5 +1,5 @@
 dependencies {
-    implementation project(':core:core-domain:service-template-domain')
+    implementation project(':core:domain:service-template-domain')
 
     api 'org.springframework.boot:spring-boot-starter-data-jpa'
     implementation 'org.springframework.boot:spring-boot-devtools'

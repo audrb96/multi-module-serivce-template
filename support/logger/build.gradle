@@ -1,5 +1,5 @@
 dependencies {
-    implementation project(':core:core-common')
+    implementation project(':core:common')
 
     implementation 'com.fasterxml.jackson.core:jackson-databind:2.17.1'
     implementation 'org.slf4j:slf4j-api:2.0.13'
