@@ -1,4 +1,4 @@
-package servicetemplate.support.deadletter.googlechat;
+package servicetemplate.support.deadletter.sender;
 
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;

@@ -1,5 +1,5 @@
 dependencies {
-    implementation project(':core:core-common')
+    implementation project(':core:common')
 
     // 아무 의존성도 넣지 마시오...!!
 }

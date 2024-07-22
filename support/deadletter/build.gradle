@@ -1,6 +1,6 @@
 dependencies {
-    implementation project(':core:core-client:google-chat-feign-client')
-    implementation project(':core:core-common')
+    implementation project(':core:infra:client:google-chat-feign-client')
+    implementation project(':core:common')
 
     implementation 'org.springframework:spring-context'
 }
