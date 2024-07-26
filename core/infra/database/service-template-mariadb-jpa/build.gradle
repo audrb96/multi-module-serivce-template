@@ -1,8 +1,7 @@
 dependencies {
-    implementation project(':core:domain:service-template-domain')
-
-    api 'org.springframework.boot:spring-boot-starter-data-jpa'
-    implementation 'org.springframework.boot:spring-boot-devtools'
-
     runtimeOnly 'org.mariadb.jdbc:mariadb-java-client'
+
+    implementation project(':core:domain:service-template-domain')
+    implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
+    implementation 'org.springframework.boot:spring-boot-devtools'
 }
