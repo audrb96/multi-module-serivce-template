@@ -1,3 +1,3 @@
 client:
   google-chat:
-    url: https://chat.googleapis.com/v1/spaces/AAAADEIvvmQ/messages?key=AIzaSyDdI0hCZtE6vySjMm-WEfRq3CPzqKqqsHI&token=aJcqRpmYnVOYDvyMopQwpDtxu3L_PVQ9M-Rgz0XSNVk
+    url: ##TODO GoogleChat Web Hook
