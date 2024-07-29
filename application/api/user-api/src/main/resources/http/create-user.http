@@ -3,6 +3,6 @@ POST http://localhost:8080/user
 Content-Type: application/json
 
 {
-	"name": "fdfddsafdsafsda",
+	"name": "fdfddsafdddddsafsda",
 	"password": "1234"
 }

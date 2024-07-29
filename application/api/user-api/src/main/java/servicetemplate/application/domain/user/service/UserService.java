@@ -19,7 +19,6 @@ public class UserService {
 
 	public User create(CreateUserCommand command) {
 		User user = command.toUser();
-
 		repository.findByName(user.getName())
 			.ifPresent(findUser -> {
 				throw CreateUserValidateException.existName(user.getName());
